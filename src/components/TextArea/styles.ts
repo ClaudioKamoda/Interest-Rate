@@ -1,12 +1,15 @@
 import styled from 'styled-components'
 
-export const Input = styled.input`
-  font-size: 1em;
-  height: 44px;
-  width: 90px;
-  padding: 5px;
-  text-align: right;
-  border: none;
+export const InputContainer = styled.div`
+  input{
+    font-size: 1em;
+    height: 44px;
+    width: 100px;
+    padding: 5px;
+    text-align: right;
+    border: none;
+    margin-right: 1px;
+  }
 `
 
 export const Percentage = styled.p`
@@ -18,4 +21,15 @@ export const Percentage = styled.p`
   width: 40px;
   padding: 5px;
   font-size: 1em;
+`
+
+export const Text = styled.p`
+  font-size: 1em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 44px;
+  width: 100px;
+  padding: 5px;
+  text-align: right;
 `

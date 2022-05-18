@@ -1,16 +1,18 @@
 import React from 'react';
 import * as C from './App.styles'
-import Dropdown from './components/Dropdown';
-import TextArea from './components/TextArea';
+import Interest from './components/Interest';
 
 function App() {
+  let typedValue:string = '12'
+
   return (
   <>
     <C.GlobalStyle/>
     <C.Page>
       <C.Container>
-        <TextArea/>
-        <Dropdown/>
+        <h1>Interest Rate<br/>Converter</h1>
+        <Interest readonly={false}/>
+        <Interest readonly={true} value={typedValue}/>
       </C.Container>
     </C.Page>
   </>
