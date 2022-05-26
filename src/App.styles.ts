@@ -1,5 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
+import React from 'react'
+
+interface FlexContainerProps {
+  direction: String,
+  color?: String
+}
 
 export const GlobalStyle = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
@@ -12,30 +18,40 @@ export const GlobalStyle = createGlobalStyle`
   }
 `
 
-export const Page = styled.main`
-  background-color: #ddd;
-  height: 100vh;
-  width: 100vw;
+const flexMixin = css`
   display: flex;
   justify-content: center;
   align-items: center; 
+  gap: 5px;
+`
+
+export const Page = styled.main`
+  background-color: #353535;
+  height: 100vh;
+  width: 100vw;
+  ${flexMixin};
+`
+
+export const FlexContainer = styled.div<FlexContainerProps>`
+  ${flexMixin};
+  flex-direction: ${props => props.direction as React.Key};
+  padding: 5px;
+  background-color: ${props => props.color ? props.color as React.Key : 'none'};
+  border-radius: 8px;
 `
 
 export const Container = styled.section`
   height: fit-content;
-  width: 300px;
+  width: fit-content;
   background-color: #fff;
-  padding: 20px 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
+  padding: 10px;
+  ${flexMixin};
   border-radius: 8px;
   box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.2);
 
   h1{
     text-align: center;
     line-height: 1.5rem;
+    padding:5px;
   }
 `
