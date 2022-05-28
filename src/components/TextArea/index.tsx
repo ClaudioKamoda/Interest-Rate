@@ -1,3 +1,4 @@
+import React from 'react'
 import {InputContainer, Percentage, Text} from './styles'
 
 interface InputProps {
@@ -5,7 +6,7 @@ interface InputProps {
   value?: string
 }
 
-const TextArea = (props:InputProps) => {
+const TextArea: React.FC<InputProps> = (props:InputProps) => {
   return (
     <>
     {!props.readonly && <InputContainer>

@@ -1,19 +1,23 @@
-import React from 'react';
+import { useEffect } from 'react';
 import * as C from './App.styles'
 import PeriodSelection from './components/PeriodSelection';
 import Interest from './components/Interest';
 import {ArrowRight, ArrowLeft} from 'react-feather'
+import {useSelector} from 'react-redux'
+import { RootState } from './store/store';
 
 function App() {
   let typedValue:string = '12'
+  const basePeriod = useSelector((state:RootState) => state.interest.basePeriod)
+  const goalPeriod = useSelector((state:RootState) => state.interest.toConvertPeriod)
   
   const convertInterest = (interest:number, time:string , toTime:string) => {
     type ObjectKey = keyof typeof periods;
     const periods = {
-      Day: 365,
-      Week: 52,
-      Month: 12,
-      Year: 1
+      Daily: 365,
+      Weekly: 52,
+      Monthly: 12,
+      Yearly: 1
     }
     const periodGiven = time as ObjectKey
     const periodToConvert = toTime as ObjectKey
@@ -26,6 +30,10 @@ function App() {
     return formatedInterest
   }
 
+  useEffect(() => {
+    console.log(basePeriod, goalPeriod)
+  },[basePeriod, goalPeriod])
+
   return (
   <>
     <C.GlobalStyle/>
@@ -36,7 +44,7 @@ function App() {
           <C.FlexContainer direction="row">
             <C.FlexContainer direction="column" color="#d2d7df">
               <Interest readonly={false}/>
-              <PeriodSelection/>
+              <PeriodSelection mode={"base"}/>
             </C.FlexContainer>
             <C.FlexContainer direction="column">
               <ArrowRight/>
@@ -44,7 +52,7 @@ function App() {
             </C.FlexContainer>
             <C.FlexContainer direction="column" color="#d2d7df">
               <Interest readonly={true} value={typedValue}/>
-              <PeriodSelection/>
+              <PeriodSelection mode={"goal"}/>
             </C.FlexContainer>
           </C.FlexContainer>
         </C.FlexContainer>

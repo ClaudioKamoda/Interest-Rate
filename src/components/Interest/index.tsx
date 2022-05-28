@@ -1,3 +1,4 @@
+import React from 'react';
 import TextArea from '../TextArea';
 import {InterestContainer} from './styles'
 
@@ -6,7 +7,7 @@ interface InterestProps {
   value?: string
 }
 
-const Interest = (props:InterestProps) => {
+const Interest: React.FC<InterestProps> = (props:InterestProps) => {
   return (
     <InterestContainer>
       <TextArea readonly={props.readonly} value={props.value}/>
