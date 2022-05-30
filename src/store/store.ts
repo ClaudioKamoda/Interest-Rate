@@ -6,13 +6,13 @@ interface PayloadType {
 }
 
 interface InitialStateType {
-  typedInterest: string,
+  typedInterest: number,
   basePeriod: string,
   toConvertPeriod: string
 }
 
 const initialState:InitialStateType = {
-  typedInterest: '0',
+  typedInterest: 0,
   basePeriod: 'Yearly',
   toConvertPeriod: 'Yearly'
 }
@@ -28,7 +28,7 @@ const interestSlice = createSlice({
       if(action.payload.mode === 'goal')
         state.toConvertPeriod = action.payload.value
     },
-    changeInterest(state:InitialStateType, action:PayloadAction<string>){
+    changeInterest(state:InitialStateType, action:PayloadAction<number>){
       state.typedInterest = action.payload
     }
 	}

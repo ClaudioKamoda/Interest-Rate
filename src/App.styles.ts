@@ -48,10 +48,20 @@ export const Container = styled.section`
   ${flexMixin};
   border-radius: 8px;
   box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.2);
+`
 
-  h1{
+export const Header = styled.header`
+  h1, h4{
     text-align: center;
-    line-height: 1.5rem;
     padding:5px;
   }
+  h1{
+    line-height: 1.5rem;
+    font-size: 1.6rem;
+  }
+  h4{
+    line-height: 1rem;
+    font-size: 1rem;
+  }
+
 `
