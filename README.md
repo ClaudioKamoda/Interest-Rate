@@ -6,8 +6,8 @@ Now you can have the answer easy and clean. Type your interest rate and select t
 
 This project was created using React, Typescript, Styled Components and Redux with the intention of studing this technologies.
 
-![Final Look Desktop](https://github.com/ClaudioKamoda/Interest-Rate/blob/main/src/images/FinalLookDesktop.png)
-![Final Look Mobile](https://github.com/ClaudioKamoda/Interest-Rate/blob/main/src/images/FinalLookMobile.png)
+![Final Look Desktop](https://github.com/ClaudioKamoda/Interest-Rate/blob/main/src/images/FinalLookDesktop.PNG)
+![Final Look Mobile](https://github.com/ClaudioKamoda/Interest-Rate/blob/main/src/images/FinalLookMobile.PNG)
 
 ## Demo Link
 
