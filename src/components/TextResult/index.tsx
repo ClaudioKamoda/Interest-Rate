@@ -12,6 +12,7 @@ const TextResult: React.FC = () => {
   
   const convertInterest = (interest:number, time:string , toTime:string) => {
     type ObjectKey = keyof typeof periods;
+    let formatedInterest = '0'
     const periods = {
       Daily: 365,
       Weekly: 52,
@@ -24,14 +25,23 @@ const TextResult: React.FC = () => {
     const expoent = (periods[periodGiven] / periods[periodToConvert]) * Math.log(1 + interest/100)
     
     const convertedInterest = Math.E ** (expoent)
-    const formatedInterest = ((convertedInterest - 1) * 100).toFixed(4)
+    const resultInterest = ((convertedInterest - 1) * 100)
+
+    if(resultInterest <= 100000){
+      formatedInterest = resultInterest.toFixed(4)
+    }else if(resultInterest <= 1000000){
+      formatedInterest = resultInterest.toFixed(3)
+    }else if(resultInterest <= 10000000){
+      formatedInterest = resultInterest.toFixed(2)
+    }else{
+      formatedInterest = resultInterest.toExponential(3).toString()
+    }
 
     return formatedInterest
   }
   
   useEffect(()=>{
     setResultInterest(convertInterest(typedInterest, basePeriod, goalPeriod))
-    console.log(basePeriod, goalPeriod, typedInterest, resultInterest)
   }, [basePeriod, goalPeriod, typedInterest, resultInterest])
 
   return (
