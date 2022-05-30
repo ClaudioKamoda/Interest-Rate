@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+//Custom Hook to get scrren width and height
+//Got from stack overflow
+
 const getWindowDimensions = () => {
   const {innerHeight: height, innerWidth: width} = window
   return {

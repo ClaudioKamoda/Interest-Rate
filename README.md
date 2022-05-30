@@ -4,7 +4,10 @@ Have you ever asked yourself if 12% a year is the same as 1% a month? (spoiler: 
 
 Now you can have the answer easy and clean. Type your interest rate and select the time period and select the time period to convert it.
 
-This project was created using React, Typescript and Styled Components with the intention of studing this technologies.
+This project was created using React, Typescript, Styled Components and Redux with the intention of studing this technologies.
+
+![Final Look Desktop](https://github.com/ClaudioKamoda/Interest-Rate/blob/main/src/images/FinalLookDesktop.png)
+![Final Look Mobile](https://github.com/ClaudioKamoda/Interest-Rate/blob/main/src/images/FinalLookMobile.png)
 
 ## Demo Link
 

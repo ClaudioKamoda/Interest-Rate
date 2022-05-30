@@ -6,6 +6,7 @@ import {ArrowRight, ArrowLeft, ArrowUp, ArrowDown} from 'react-feather'
 import useWindowDimensions from './util/useWindowDimensions';
 
 const App: React.FC = () => {
+  //this component contains the main structure of the page
   const { width } = useWindowDimensions();
 
   const isMobile = () => {

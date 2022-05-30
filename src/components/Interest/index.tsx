@@ -9,10 +9,11 @@ interface InterestProps {
 }
 
 const Interest: React.FC<InterestProps> = (props:InterestProps) => {
-const dispatcher = useDispatch()
+  const dispatcher = useDispatch()
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     let value = e.currentTarget.value
+    //commits to the store only if the input value is a valid number
     if(Number(value)){
       dispatcher(interestActions.changeInterest(Number(value)))
     }else{

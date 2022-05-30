@@ -4,6 +4,7 @@ import { RootState } from '../../store/store'
 import {Text} from './styles'
 
 const TextResult: React.FC = () => {
+  //getters to all data is store
   const typedInterest:number = useSelector((state:RootState) => state.interest.typedInterest)
   const basePeriod:string = useSelector((state:RootState) => state.interest.basePeriod)
   const goalPeriod:string = useSelector((state:RootState) => state.interest.toConvertPeriod)
@@ -27,6 +28,7 @@ const TextResult: React.FC = () => {
     const convertedInterest = Math.E ** (expoent)
     const resultInterest = ((convertedInterest - 1) * 100)
 
+    //formating handler
     if(resultInterest <= 100000){
       formatedInterest = resultInterest.toFixed(4)
     }else if(resultInterest <= 1000000){
