@@ -42,7 +42,8 @@ export const FlexContainer = styled.div<FlexContainerProps>`
 
 export const Container = styled.section`
   height: fit-content;
-  width: fit-content;
+  width: 90vw;
+  max-width: fit-content;
   background-color: #fff;
   padding: 10px;
   ${flexMixin};
