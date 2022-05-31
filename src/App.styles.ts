@@ -30,6 +30,7 @@ export const Page = styled.main`
   height: 100vh;
   width: 100vw;
   ${flexMixin};
+  flex-direction: column;
 `
 
 export const FlexContainer = styled.div<FlexContainerProps>`
@@ -64,5 +65,8 @@ export const Header = styled.header`
     line-height: 1rem;
     font-size: 1rem;
   }
+`
 
+export const Footer = styled.footer`
+  color: white;
 `

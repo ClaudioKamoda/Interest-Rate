@@ -14,7 +14,7 @@ const Interest: React.FC<InterestProps> = (props:InterestProps) => {
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     let value = e.currentTarget.value
     //commits to the store only if the input value is a valid number
-    if(Number(value)){
+    if(Number(value) && Number(value) >= 0){
       dispatcher(interestActions.changeInterest(Number(value)))
     }else{
       dispatcher(interestActions.changeInterest(0))

@@ -45,6 +45,7 @@ const App: React.FC = () => {
           </C.FlexContainer>
         </C.FlexContainer>
       </C.Container>
+      <C.Footer>Made by Claudio. 2022</C.Footer>
     </C.Page>
   </>
   );

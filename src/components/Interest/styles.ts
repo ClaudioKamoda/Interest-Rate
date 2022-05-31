@@ -14,7 +14,7 @@ export const InterestContainer = styled.section`
 `
 
 export const InputContainer = styled.div`
-  input{
+  input[type=number]{
     font-size: 1em;
     height: 44px;
     width: 100px;
@@ -24,6 +24,12 @@ export const InputContainer = styled.div`
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     margin-right: 1px;
+    -moz-appearance: textfield;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 `
 
