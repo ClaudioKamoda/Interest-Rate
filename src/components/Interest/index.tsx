@@ -25,7 +25,7 @@ const Interest: React.FC<InterestProps> = (props:InterestProps) => {
   return (
     <InterestContainer>
       {!props.readonly && <InputContainer>
-      <input type="text" placeholder='type here...' onChange={handleChange}/>
+      <input type="number" placeholder='type here...' onChange={handleChange}/>
       </InputContainer>}
       {props.readonly && <TextResult/>}
       <Percentage>%</Percentage>
