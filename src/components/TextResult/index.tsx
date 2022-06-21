@@ -15,18 +15,39 @@ const TextResult: React.FC = () => {
     type ObjectKey = keyof typeof periods;
     let formatedInterest = '0'
     const periods = {
-      Daily: 365,
-      Weekly: 52,
-      Monthly: 12,
-      Yearly: 1
+      Daily: {
+        Daily: 1,
+        Weekly: 7,
+        Monthly: 30,
+        Yearly: 365
+      },
+      Weekly: {
+        Daily: 1/7,
+        Weekly: 1,
+        Monthly: 4,
+        Yearly: 52
+      },
+      Monthly: {
+        Daily: 1/30,
+        Weekly: 1/4,
+        Monthly: 1,
+        Yearly: 12
+      },
+      Yearly: {
+        Daily: 1/365,
+        Weekly: 1/52,
+        Monthly: 1/12,
+        Yearly: 1
+      }
     }
     const periodGiven = time as ObjectKey
     const periodToConvert = toTime as ObjectKey
     
-    const expoent = (periods[periodGiven] / periods[periodToConvert]) * Math.log(1 + interest/100)
+    const expoent = periods[periodGiven][periodToConvert]
+    console.log(expoent)
     
-    const convertedInterest = Math.E ** (expoent)
-    const resultInterest = ((convertedInterest - 1) * 100)
+    const convertedInterest = (1 + interest/100) ** (expoent)
+    const resultInterest = (convertedInterest - 1) * 100
 
     //formating handler
     if(resultInterest <= 100000){
